@@ -196,7 +196,7 @@ def main() -> None:
     """Configures HTTP timeouts, attaches handlers, and launches polling."""
     # Custom HTTP timeouts to prevent TimedOut errors during image transfers
     request_config = HTTPXRequest(
-        connect_timeout=1800.0,
+        connect_timeout=20.0,
         read_timeout=30.0,
         write_timeout=20.0
     )
