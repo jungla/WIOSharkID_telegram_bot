@@ -36,6 +36,10 @@ class StandaloneElasmobranchClassifier:
         # Initialize ONNX Runtime Session (optimized for CPU/NPU)
         opts = ort.SessionOptions()
         opts.graph_optimization_level = ort.GraphOptimizationLevel.ORT_ENABLE_ALL
+        # Disable CPU memory arena and memory pattern to save RAM
+        opts.enable_cpu_mem_arena = False
+        opts.enable_mem_pattern = False  
+ 
         self.session = ort.InferenceSession(str(self.onnx_path), opts, providers=["CPUExecutionProvider"])
 
         # Extract input/output details
