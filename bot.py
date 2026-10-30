@@ -23,7 +23,7 @@ from standalone_engine import StandaloneElasmobranchClassifier
 # ==========================================
 
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
-MODEL_PATH = os.getenv("MODEL_PATH", "./models/elasmobranch_mobilenet.onnx")
+MODEL_PATH = os.getenv("MODEL_PATH", "./models/elasmobranch_mobilenet_int8.onnx")
 META_PATH = os.getenv("META_PATH", "./models/metadata.json")
 
 import asyncio
